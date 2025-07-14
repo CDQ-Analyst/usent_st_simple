@@ -2,6 +2,5 @@ streamlit
 pandas
 matplotlib
 openpyxl
-zipfile
-os
+
 
