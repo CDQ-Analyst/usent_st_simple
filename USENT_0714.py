@@ -11,7 +11,8 @@ import time
 st.set_page_config(layout="wide")
 
 
-logo_link_cxpt = r"C:\Users\VACOAzizS1\Documents\Python Scripts\USENT\UnZip-LOINC-app-main\USENT_Logo-removebg.png"
+# logo_link_cxpt = r"C:\Users\VACOAzizS1\Documents\Python Scripts\USENT\UnZip-LOINC-app-main\USENT_Logo-removebg.png"
+logo_link_cxpt = r"C:\Users\sulay\Documents\Streamlit_App\USENT_Simple\USENT_Logo-removebg.png"
 with st.sidebar:
   st.image(logo_link_cxpt, width=100, caption=None)
 
@@ -29,7 +30,8 @@ with col2:
 
 # Create a permanent unzip directory
 # UNZIP_DIR = "unzipped_files"
-UNZIP_DIR = r"C:\Users\VACOAzizS1\Documents\Python Scripts\USENT"
+UNZIP_DIR = r"C:\Users\sulay\Documents\Streamlit_App\USENT_Simple"
+
 os.makedirs(UNZIP_DIR, exist_ok=True)
 
 # Title & Sidebar
