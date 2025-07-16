@@ -56,37 +56,37 @@ cd ~
 python3 -m venv my_project_venv
 ```
 4.	Activate the virtual environment:
-```
-Bash
+
+```Bash
 source my_project_venv/bin/activate
 ```
 
 Your prompt will change to (my_project_venv) [ec2-user@ip-...:~$].
 6.	Navigate into your project directory:
-```
-Bash
+
+```Bash
 cd usent_st_simple
 ```
 Your prompt will change to (my_project_venv) [ec2-user@ip-...:~/usent_st_simple]$.
 7.	Edit requirements.txt to remove built-in modules:
 This step is crucial to prevent "No matching distribution found" errors for modules like io, os, zipfile, time, etc., which are part of Python's standard library.
-```
-Bash
+
+```Bash
 nano requirements.txt
 ```
 o	Delete any lines that only contain built-in module names (e.g., io, os, zipfile, time). Keep only external packages like streamlit, pandas, matplotlib, openpyxl.
 o	Save: Ctrl+O, then Enter.
 o	Exit: Ctrl+X.
 8.	Install project dependencies:
-```
-Bash
+
+```Bash
 pip install -r requirements.txt
 ```
 Step 4: Fix Image Paths in Your Streamlit App (On EC2)
 1.	Edit your Streamlit application script (USENT_0714.py):
 The error Error opening 'C:\Users\...' indicated a Windows-style path.
-```
-Bash
+
+```Bash
 nano USENT_0714.py
 ```
 2.	Locate the image path (e.g., logo_link_cxpt = "C:\Users\sulay\Documents\...\USENT_Logo-removebg.png") and change it to a relative Linux path.
@@ -98,15 +98,15 @@ logo_link_cxpt = "USENT_Logo-removebg.png"
 3.	Save changes (Ctrl+O, Enter) and exit nano (Ctrl+X).
 Step 5: Run Your Streamlit Application (On EC2)
 Use nohup and & to run your Streamlit app in the background, allowing it to continue even after you close your SSH connection.
-```
-Bash
+
+```Bash
 nohup python3 -m streamlit run USENT_0714.py --server.port 8501 --server.enableCORS false --server.enableXsrfProtection false &
 ```
 Step 6: Access Your Streamlit App
 1.	Get the Network URL:
 The Streamlit app prints its access URLs to nohup.out.
-```
-Bash
+
+```Bash
 cat nohup.out
 ```
 Look for the Network URL: http://<Private_IP_Address>:8501.
@@ -115,14 +115,14 @@ Use your EC2 instance's Public IPv4 Address (found in the AWS EC2 console) with 
 http://YOUR_EC2_PUBLIC_IP_ADDRESS:8501
 Step 7: Managing Your Application (On EC2)
 •	To check if it's running:
-```
-Bash
+
+```Bash
 ps aux | grep streamlit
 ```
 •	To stop the app:
 Find the Process ID (PID) from the ps aux output (the second column) and use:
-```
-Bash
+
+```Bash
 kill <PID>
 ```
 #### If it doesn't stop, try:
