@@ -51,8 +51,8 @@ Step 3: Set Up Python Virtual Environment and Install Dependencies (On EC2)
 cd ~
 ```
 2.	Create the virtual environment:
-```
-Bash
+
+```Bash
 python3 -m venv my_project_venv
 ```
 4.	Activate the virtual environment:
