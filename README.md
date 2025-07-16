@@ -41,8 +41,8 @@ Option B: Using git clone (from EC2)
 cd ~
 ```
 •	Then clone your repository:
-```
-Bash
+
+```Bash
 git clone https://github.com/CDQ-Analyst/usent_st_simple.git
 ```
 Step 3: Set Up Python Virtual Environment and Install Dependencies (On EC2)
