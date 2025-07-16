@@ -13,9 +13,9 @@ Bash
 ssh -i /path/to/your-key-pair.pem ec2-user@YOUR_EC2_PUBLIC_IP_OR_DNS
 (Replace /path/to/your-key-pair.pem and YOUR_EC2_PUBLIC_IP_OR_DNS).
 2.	Update system packages (on EC2):
-Bash
+```bash
 sudo yum update -y       # For Amazon Linux 2 (older)
-'''
+```
 
 
 # OR for Amazon Linux 2023:
